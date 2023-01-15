@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1','letsgetcrowded.com' ]
+ALLOWED_HOSTS = ['127.0.0.1','letsgetcrowded.com', '65.1.94.106']
 
 
 # Application definition
