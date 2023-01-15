@@ -1,0 +1,22 @@
+.btn {
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #104b15;
+    color: #fff;
+    border: none;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card{
+    margin-bottom: 20px;
+    --bs-card-border-color: none;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}

@@ -1,0 +1,83 @@
+
+<!-- extends the base.html file -->
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- title block -->
+{% block title %}Grounds{% endblock %}
+{% block header %}
+    {% include 'ground/header.html' %}
+{% endblock %}
+
+<!-- content block for the list of grounds -->
+{% block content %}
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <section>
+    <div class="py-5">
+    <div class="container">
+        <input id="pac-input" class="form-controls search-bar" type="text" placeholder="Search Grounds">
+        <div id="list" class="row hidden-md-up">
+          {% for ground in object_list %}
+            <div class=" col-md-4">
+                <div class="card">
+                    <img src="{{ ground.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ ground.name }}</h5> 
+                        <p class="card-text">{{ ground.description | slice:"50" }}</p>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item"><i class='bx bx-money'></i> <a class="detail-page-heading">Price: </a><a class="detail-page-text">{{ground.price}}</a></li>
+                        </ul>
+
+                        <a href="{% url 'ground_detail' ground.id %}" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+<!-- footer block -->
+{% block footer %}
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+{% include 'footer.html' %}
+{% endblock %}
+
+<!-- scripts block -->
+{% block scripts %}
+
+    <script>
+        const data = "{{qs_json}}"
+        const qs = JSON.parse(data.replace(/&quot;/g, '"'))
+        console.log(qs)
+        const input = document.getElementById("pac-input");
+        let filteredArray = []
+        input.addEventListener("keyup",(e)=>{
+            list.innerHTML = ""
+            filteredArray = qs.filter(ground => ground.name.toLowerCase().includes(e.target.value.toLowerCase()))
+            if (filteredArray.length == 0){
+                list.innerHTML = "<h1>No Grounds Found</h1>"
+            }
+            else {
+                filteredArray.forEach(ground => {
+                    list.innerHTML += `
+                    <div class=" col-md-4">
+                <div class="card">
+                    <img src="media/${ground.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${ground.name}</h5>
+                        <p class="card-text">${ground.description.substring(0,50)}</p>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item"><i class='bx bx-money'></i> <a class="detail-page-heading"> Price: </a><a class="detail-page-text">${ground.price}</a></li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>`
+        })
+            }
+        })    
+    </script>
+{% endblock %}
+</section>

@@ -1,0 +1,36 @@
+ {% extends 'base.html' %}
+ {% load static %}
+
+ {% block title %}Grounds{% endblock %}
+
+ {% block header %}
+{% include 'ground/header.html' %}
+ {% endblock %}
+ 
+ {% block content %}
+     <link rel="stylesheet" href="{% static 'css/list_page.css' %}">
+    
+     <section>
+    
+     <div class="py-5">
+     <div class="container">
+         <div class="row">
+             <div class="col-md-6">
+                 <img src="{{ object.image.url }}" class="card-img-top" alt="...">
+             </div>
+             <div class="col-md-6">
+                 <h1>{{ object.name }}</h1>
+                 <p>{{ object.description }}</p>
+                    </ul>
+                </div>
+                </div>
+                </div>
+                </div>
+                </section>
+    {% endblock %}
+    {% block footer %}
+    {% include 'footer.html' %}
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}
+
