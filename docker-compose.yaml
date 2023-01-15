@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  django_server:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    depends_on:
+      - django_server
+
+volumes:
+  static_volume:
+  media_volume:
