@@ -15,7 +15,6 @@ class Ground(models.Model):
     image = models.ImageField(upload_to='gallery')
     has_lights = models.BooleanField(default=False)
     has_drinks = models.BooleanField(default=False)
-    has_sport_equipment = models.BooleanField(default=False)
     class Meta:
         ordering = ["-name"]
     
