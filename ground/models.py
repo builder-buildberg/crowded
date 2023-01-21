@@ -10,7 +10,7 @@ class Ground(models.Model):
     area = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     description = models.TextField() 
-    num_of_courts = models.IntegerField()
+    num_of_courts = models.IntegerField(default=1)
     sports_type = models.CharField(max_length=100)
     owner_contact = models.CharField(max_length=100)
     price = models.IntegerField()
