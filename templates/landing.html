@@ -481,7 +481,7 @@
               <div class="col-lg-6 info">
                 <i class="bx bx-envelope"></i>
                 <h4>Email Us</h4>
-                <p> Impoution@gmail.com</p>
+                <p> info@letsgetcrowded.com</p>
               </div>
               <div class="col-lg-6 info">
                 <i class="bx bx-time-five"></i>
@@ -493,6 +493,7 @@
 
           <div class="col-lg-6">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
+              {% csrf_token %}
               <div class="form-group">
                 <input placeholder="Your Name" type="text" name="name" class="form-control" id="name" required>
               </div>
