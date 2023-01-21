@@ -7,11 +7,13 @@ from django.db import models
 class Ground(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
-    description = models.TextField()
+    area = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    description = models.TextField() 
+    num_of_courts = models.IntegerField()
+    sports_type = models.CharField(max_length=100)
     owner_contact = models.CharField(max_length=100)
-    owner_whatsapp = models.CharField(max_length=100)
     price = models.IntegerField()
-    area = models.IntegerField()
     image = models.ImageField(upload_to='gallery')
     has_lights = models.BooleanField(default=False)
     has_drinks = models.BooleanField(default=False)
@@ -20,3 +22,4 @@ class Ground(models.Model):
     
     def __str__(self):
         return self.name
+    
