@@ -1,76 +1,65 @@
- {% extends 'base.html' %}
- {% load static %}
+<!-- extends the base.html file -->
+{% extends 'base.html' %}
+{% load static %}
 
- {% block title %}{{ object.name }}{% endblock %}
+<!-- title block -->
+{% block title %}Grounds{% endblock %}
+{% block header %}
+    {% include 'ground/header.html' %}
+{% endblock %}
 
- {% block header %}
-{% include 'ground/header.html' %}
- {% endblock %}
- 
- {% block content %}
-     <link rel="stylesheet" href="{% static 'css/list_page.css' %}">
-    <link rel="stylesheet" href="{% static 'css/ground_detail.css' %}">
-     <section id="hero" class="d-flex align-items-center">
-        ​
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
-                  <div>
+<!-- content block for the list of grounds -->
+{% block content %}
+    <!-- <link rel="stylesheet" href="{% static 'css/list_page.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/ground_detail.css' %}">-->
+
+<section>
+    <div class="container" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+                <div>
                     <img src="{{ object.image.url }}" class="img-fluid" alt="">
-                  </div>
                 </div>
-                <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
-                  <h1 class="Lets_get_crowded">{{ object.name }}</h1>
-                  <h2 class="Lets_get_crowded"><i class="bi bi-geo-alt-fill"></i>{{ object.address }}</h2>
-                  <h2 class="Lets_get_crowded"><i class="bi bi-tag-fill"></i>{{ object.price }}</h2>
-                  <a href="tel: +{{ object.owner_contact }}" class="download-btn">Call Now</a>
-                  <div class="container">
-                    
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <a class="download-btn1"> {{ object.sports_type }}</a>
-                      </div>
-                      <div class="col-sm-6">
-                        <h8>Courts = {{object.num_of_courts}}</h8>
-                    </div>
-                    <hr> 
-                    <table class="Attributes">
-                        <tr>
-                            <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i>Toilet</th>
-                            <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i>Flood Lights</th>
-        ​
-                        </tr>
-                        <tr>
-                            <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i>Parking</th>
-                            <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i>Drinks</th>
-        ​
-                        </tr>
-                    </table>           
-                  </div>
-                  <div class="test">
-                 </div>
-                 
-              </div>
-                <a href="{{ object.url_map }}" class="download-btn2">View on Map</a>
-              </div>
-        ​
             </div>
-            
-          </section>
+            <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+                <h1>{{ object.name }}</h1>
+                <hr style="max-width:500px; height: 2px">
+                <h5><i class="bi bi-geo-alt-fill"></i> {{ object.address }}</h5>
+                <h5><i class="bi bi-tag-fill"></i> Rs. {{ object.price }} per hour</h5>
+                <h5><i class="bi bi-hash"></i> {{object.num_of_courts}} courts</h5>
+                <h5><i class="bx bx-football"></i> {{ object.sports_type }}</h5>
+                <div class="container">
+                    <div class="row">
+                        <hr style="max-width:500px; height: 2px;">
+                            <table class="attributes">
+                                <tr>
+                                    <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i> Toilet</th>
+                                    <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i> Flood Lights</th>
+                                </tr>
+                                <tr>
+                                    <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i> Parking</th>
+                                    <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i> Drinks</th>
+                                </tr>
+                            </table>           
+                    </div>                 
+                </div>
+                <section id="hero" class="d-flex align-items-center" style="background-color: white; padding-bottom: 0px;">
+                    <div class="container">
+                      <div class="row">
+                          <div id= "cta">
+                            <a href="{{object.owner_contact}}" class="download-btn" style="margin-top:5px;"><i class="bx bxs-phone"></i> Call Now</a>
+                            <a href="{{object.map_link}}" class="download-btn" style="margin-top:5px;  background-color: white; border: 2px solid var(--dark); border-radius: 3px;  color: var(--dark); box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); " ><i class="bx bxs-map"></i> View on Map</a>
+                          </div>
+                      </div>
+                    </div>
+                
+                </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+            </div>
+        </div>
+    </div>
+</section>
 <!--     
      <section>
     
@@ -91,6 +80,7 @@
                 </section> -->
     {% endblock %}
     {% block footer %}
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     {% include 'footer.html' %}
     {% endblock %}
     {% block scripts %}
