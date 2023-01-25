@@ -1,7 +1,7 @@
  {% extends 'base.html' %}
  {% load static %}
 
- {% block title %}Grounds{% endblock %}
+ {% block title %}{{ object.name }}{% endblock %}
 
  {% block header %}
 {% include 'ground/header.html' %}
@@ -9,7 +9,69 @@
  
  {% block content %}
      <link rel="stylesheet" href="{% static 'css/list_page.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css/ground_detail.css' %}">
+     <section id="hero" class="d-flex align-items-center">
+        ​
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+                  <div>
+                    <img src="{{ object.image.url }}" class="img-fluid" alt="">
+                  </div>
+                </div>
+                <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+                  <h1 class="Lets_get_crowded">{{ object.name }}</h1>
+                  <h2 class="Lets_get_crowded"><i class="bi bi-geo-alt-fill"></i>{{ object.address }}</h2>
+                  <h2 class="Lets_get_crowded"><i class="bi bi-tag-fill"></i>{{ object.price }}</h2>
+                  <a href="tel: +{{ object.owner_contact }}" class="download-btn">Call Now</a>
+                  <div class="container">
+                    
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <a class="download-btn1"> {{ object.sports_type }}</a>
+                      </div>
+                      <div class="col-sm-6">
+                        <h8>Courts = {{object.num_of_courts}}</h8>
+                    </div>
+                    <hr> 
+                    <table class="Attributes">
+                        <tr>
+                            <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i>Toilet</th>
+                            <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i>Flood Lights</th>
+        ​
+                        </tr>
+                        <tr>
+                            <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i>Parking</th>
+                            <th  class= 'bulit_properties' scope="col"><i class="bi bi-check-circle-fill"></i>Drinks</th>
+        ​
+                        </tr>
+                    </table>           
+                  </div>
+                  <div class="test">
+                 </div>
+                 
+              </div>
+                <a href="{{ object.url_map }}" class="download-btn2">View on Map</a>
+              </div>
+        ​
+            </div>
+            
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--     
      <section>
     
      <div class="py-5">
@@ -26,7 +88,7 @@
                 </div>
                 </div>
                 </div>
-                </section>
+                </section> -->
     {% endblock %}
     {% block footer %}
     {% include 'footer.html' %}
