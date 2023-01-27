@@ -110,7 +110,17 @@
   mixpanel.init('0604195fc6d63732cf174888608f5728'); 
   mixpanel.track('Landed');
   mixpanel.track_links("#cta a", "Book_now", {"referrer": document.referrer});
-  mixpanel.track_links("#Cta34", "Get_listed", {"referrer": "document.referrers"});
+  mixpanel.track_links("#Cta34", "Get_listed", {"referrer": document.referrer});
+  mixpanel.track_links("#facebook1", "Clicked_Facebook", {"referrer": document.referrer});
+  mixpanel.track_links("#Instagram1", "Clicked_Instgram", {"referrer": document.referrer});
+  mixpanel.track_links("#LinkedIn1", "Clicked_LinkedIn", {"referrer": document.referrer});
+  mixpanel.track_links("#facebook2", "Clicked_Iacebook", {"referrer": document.referrer});
+  mixpanel.track_links("#Instagram2", "Clicked_Instgram", {"referrer": document.referrer});
+  mixpanel.track_links("#LinkedIn2", "Clicked_LinkedIn", {"referrer": document.referrer});
+  mixpanel.track_links("#View_details","View_Details",{"referrer": document.referrer})
+  mixpanel.track_links("#View_Map","View_Map",{"referrer": document.referrer})
+  mixpanel.track_links("#Call_Now","View_Map",{"referrer": document.referrer})
+  mixpanel.track("#search",'Clicked_Search');
   </script>
     {% block scripts %}
     <script>

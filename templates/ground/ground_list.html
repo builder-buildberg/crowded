@@ -16,7 +16,7 @@
     <div class="py-5">
     <div class="container">
         <!-- give the search bar a class of search-bar and margin of 10px inside the container -->  
-        <div class="search-bar" style="margin:20px; display: flex; align-items:center; ">
+        <div id="Search1" class="search-bar" style="margin:20px; display: flex; align-items:center; ">
             <input type="text" id="pac-input" class="form-control" placeholder="Search for Grounds and Locations">
         </div>
         
@@ -29,7 +29,7 @@
                         <h5 class="card-title">{{ ground.name }}</h5>
                         <a class="list-group-item"><i class='bx bx-map'></i> {{ground.area}}, {{ground.city}}</a>
                         <a class="list-group-item"><i class='bx bx-money'></i> Rs. {{ground.price}} per hours</a>
-                        <a href="{% url 'ground_detail' ground.id %}" class="btn btn-primary" style="width:100%; margin-top:8px;">View Details</a>
+                        <a id="view_details" href="{% url 'ground_detail' ground.id %}" class="btn btn-primary" style="width:100%; margin-top:8px;">View Details</a>
                     </div>
                 </div>
             </div>
