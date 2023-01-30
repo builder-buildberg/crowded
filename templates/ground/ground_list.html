@@ -23,12 +23,12 @@
         <div id="list" class="row hidden-md-up">
           {% for ground in object_list %}
             <div class=" col-md-4">
-                <div class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'">
+                <div class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'" style="cursor: pointer;">
                     <img src="{{ ground.image.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ ground.name }}</h5>
                         <a class="list-group-item"><i class='bx bx-map'></i> {{ground.area}}, {{ground.city}}</a>
-                        <a class="list-group-item"><i class='bx bx-money'></i> Rs. {{ground.price}} per hours</a>
+                        <a class="list-group-item"><i class='bx bx-money'></i> Rs. {{ground.price}} per hour</a>
                         <a id="view_details" href="{% url 'ground_detail' ground.id %}" class="btn btn-primary" style="width:100%; margin-top:8px;">View Details</a>
                     </div>
                 </div>
@@ -63,12 +63,12 @@
                 filteredArray.forEach(ground => {
                     list.innerHTML += `
                     <div class=" col-md-4">
-                <div class="card">
+                <div class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'">
                     <img src="media/${ground.image}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${ground.name}</h5>
                         <a class="list-group-item"><i class='bx bx-map'></i> ${ground.area}, ${ground.city}</a>
-                        <a class="list-group-item"><i class='bx bx-money'></i> Rs. ${ground.price} per hours</a>
+                        <a class="list-group-item"><i class='bx bx-money'></i> Rs. ${ground.price} per hour</a>
                         <a href="/ground/${ground.id}" class="btn btn-primary" style="width:100%; margin-top:8px;" >View Details</a>
                     </div>
                 </div>
