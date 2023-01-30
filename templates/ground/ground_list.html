@@ -23,7 +23,7 @@
         <div id="list" class="row hidden-md-up">
           {% for ground in object_list %}
             <div class=" col-md-4">
-                <div class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'" style="cursor: pointer;">
+                <div class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'">
                     <img src="{{ ground.image.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ ground.name }}</h5>
@@ -63,7 +63,7 @@
                 filteredArray.forEach(ground => {
                     list.innerHTML += `
                     <div class=" col-md-4">
-                <div class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'">
+                        <div class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'">
                     <img src="media/${ground.image}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${ground.name}</h5>
