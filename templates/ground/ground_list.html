@@ -60,7 +60,7 @@
                 list.innerHTML = "<h1 style='text-align: center;'>No Grounds Found</h1>"
             }
             else {
-                list.innerHTML = `<p>${filteredArray.length} Grounds Found</p>`
+                list.innerHTML = `<p><strong>${filteredArray.length} Grounds Found</strong></p>`
                 filteredArray.forEach(ground => {
                     list.innerHTML += `
                     <div class=" col-md-4">
