@@ -1326,10 +1326,10 @@ section {
 
 
 /* added by Usama */
-/* bootstrap button color when it is active or selected */
+/* bootstrap button color when it is selected */
 
-.btn.active, .btn:active, .btn:focus, .btn:hover {
+.btn-primary.active, .btn-primary:active, .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #343a40;
-    border-color: #343a40;
+    background-color: #104b15;
+    border-color: #104b15;
 }
