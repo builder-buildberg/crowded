@@ -7,16 +7,16 @@
 
   <title>{% block title %}{% endblock %}</title>
 
-  <meta name="description" content="Crowded is a platform for booking slots for varaious kind of services including sports grounds.">
+  <meta name="description" content="Crowded is a platform for booking slots for various kind of services including sports grounds.">
   <meta name="author" content="Crowded">
 
 		<meta property="og:title" content="Crowded - Skip the line, Book online.">
 		<meta property="og:image" content="{% static '/img/crowded-og.png' %}">
-		<meta property="og:description" content="Crowded is a platform for booking slots for varaious kind of services including sports grounds.">
+		<meta property="og:description" content="Crowded is a platform for booking slots for various kind of services including sports grounds.">
 		<meta property="og:url" content="https://crowded.pk/">
-		<meta name="twitter:card" content="Crowded is a platform for booking slots for varaious kind of services including sports grounds.">
+		<meta name="twitter:card" content="Crowded is a platform for booking slots for various kind of services including sports grounds.">
     <meta name="twitter:creator" content="@crowdedpk">
-    <meta property="og:description" content="Crowded is a platform for booking slots for varaious kind of services including sports grounds. ">
+    <meta property="og:description" content="Crowded is a platform for booking slots for various kind of services including sports grounds. ">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">
@@ -127,6 +127,11 @@
         appId: "f4c6ea69-7964-4460-996a-644291f136fc",
       });
     });
+  </script>
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
   </script>
 
     {% block scripts %}
