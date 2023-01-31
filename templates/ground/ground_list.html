@@ -48,6 +48,14 @@
 {% block scripts %}
 
     <script>
+        var input = document.getElementById("pac-input");
+        input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("pac-input").blur();
+        }
+        });
+
         const data = "{{qs_json}}"
         const qs = JSON.parse(data.replace(/&quot;/g, '"'))
         console.log(qs)
