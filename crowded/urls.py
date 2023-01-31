@@ -18,7 +18,7 @@ from django.urls import path
 from ground.views import GroundListView
 import ground.views as gv
 from django.conf import settings  # new
-from django.urls import path, include  # new
+from django.urls import path, include, url  # new
 from django.conf.urls.static import static  # new
 
 from . import settings
@@ -32,6 +32,7 @@ urlpatterns = [
     path('', gv.home, name='home'),
     path('ground', GroundListView.as_view(), name='ground_list'),
     path('ground/<int:pk>', gv.GroundDetailView.as_view(), name='ground_detail'),
+    url('', include('pwa.urls')),  # You MUST use an empty string as the URL prefix
 ] 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
