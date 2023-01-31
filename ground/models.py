@@ -18,6 +18,7 @@ class Ground(models.Model):
     has_lights = models.BooleanField(default=False)
     has_drinks = models.BooleanField(default=False)
     map_link = models.CharField(max_length=100)
+    should_also_be_shown_in = models.CharField(max_length=150)
     class Meta:
         ordering = ["-name"]
     
