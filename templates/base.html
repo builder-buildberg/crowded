@@ -109,14 +109,26 @@
   // Enabling the debug mode flag is useful during implementation,
   // but it's recommended you remove it for production
   mixpanel.init('0604195fc6d63732cf174888608f5728'); 
-  mixpanel.track('Landed');
-  mixpanel.track_links("#cta a", "Book_now", {"referrer": document.referrer});
-  mixpanel.track_links("#Cta34", "Get_listed", {"referrer": document.referrer});
-  mixpanel.track_links("#View_details","View_Details",{"referrer": document.referrer})
-  mixpanel.track_links("#View_Map","View_Map",{"referrer": document.referrer})
-  mixpanel.track_links("#Call_Now","View_Map",{"referrer": document.referrer})
-  mixpanel.track("#search",'Clicked_Search');
+  mixpanel.track('landed');
+  mixpanel.track_links("#cta a", "book_now", {"referrer": document.referrer});
+  mixpanel.track_links("#Cta34", "get_listed", {"referrer": document.referrer});
+  mixpanel.track_links("#View_details","view_details",{"referrer": document.referrer})
+  mixpanel.track_links("#View_Map","view_map",{"referrer": document.referrer})
+  mixpanel.track_links("#Call_Now","view_map",{"referrer": document.referrer})
+  mixpanel.track("#search",'clicked_search');
   </script>
+
+  // onesignal code
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "f4c6ea69-7964-4460-996a-644291f136fc",
+      });
+    });
+  </script>
+
     {% block scripts %}
     <script>
 
