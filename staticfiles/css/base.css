@@ -184,7 +184,7 @@ h6 {
   padding: 10px 0 10px 30px;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-  color: var(--dark);
+  color: var(--primary);
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -1322,4 +1322,14 @@ section {
     text-align: center;
     padding: 5px 0;
   }
+}
+
+
+/* added by Usama */
+/* bootstrap button color when it is selected */
+
+.btn-primary.active, .btn-primary:active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #104b15;
+    border-color: #104b15;
 }

@@ -2,3 +2,14 @@
     background-color: #104b15;
     color: #104b15;
 }
+
+#pac-input {
+    display: flex;
+    align-self: center;
+    margin-bottom:20px;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
+}
