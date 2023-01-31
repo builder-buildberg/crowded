@@ -64,7 +64,8 @@
         input.addEventListener("keyup",(e)=>{
             list.innerHTML = ""
             filteredArray = qs.filter(ground => ground.name.toLowerCase().includes(e.target.value.toLowerCase()) || ground.area.toLowerCase().includes(e.target.value.toLowerCase()))
-            filteredArray = filteredArray.filter(ground => ground.should_also_be_shown_in.toLowerCase().includes(e.target.value.toLowerCase()))
+            <!-- also append the grounds by city -->
+            filteredArray = filteredArray.concat(qs.filter(ground => ground.should_also_be_shown_in.toLowerCase().includes(e.target.value.toLowerCase())))
             if (filteredArray.length == 0){
                 list.innerHTML = "<h1 style='text-align: center;'>No Grounds Found</h1>"
             }
