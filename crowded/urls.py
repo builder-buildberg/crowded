@@ -18,7 +18,7 @@ from django.urls import path
 from ground.views import GroundListView
 import ground.views as gv
 from django.conf import settings  # new
-from django.urls import path  # new
+from django.urls import path, re_path  # new
 from django.conf.urls.static import static  # new
 
 from . import settings
