@@ -23,7 +23,7 @@
         <div id="list" class="row hidden-md-up">
           {% for ground in object_list %}
             <div class=" col-md-4">
-                <div class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'">
+                <div id="ground_card" class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'">
                     <img src="{{ ground.image.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ ground.name }}</h5>
@@ -80,7 +80,7 @@
                 filteredArray.forEach(ground => {
                     list.innerHTML += `
                     <div class=" col-md-4">
-                        <div class="card" onclick="document.location='/ground/${ground.id}'">
+                        <div id="ground_card" class="card" onclick="document.location='/ground/${ground.id}'">
                     <img src="media/${ground.image}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${ground.name}</h5>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>`
-        mixpanel.track("ground_viewed", {
+        mixpanel.track_links("#ground_card", "ground_viewed", {
             "Ground Name": ground.name,
             "Ground Area": ground.area,
             "Ground City": ground.city,
@@ -98,7 +98,7 @@
             "Ground Image": ground.image,
             "Ground ID": ground.id
         })
-        mixpanel.track("search_query", {
+        mixpanel.track_links("#Search1","search_query", {
             "search_query": e.target.value,
             "result_length": filteredArray.length,
             "result": filteredArray.map(ground => {
