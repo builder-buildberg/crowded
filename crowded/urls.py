@@ -32,7 +32,6 @@ urlpatterns = [
     path('', gv.home, name='home'),
     path('ground', GroundListView.as_view(), name='ground_list'),
     path('ground/<int:pk>', gv.GroundDetailView.as_view(), name='ground_detail'),
-    url('', include('pwa.urls')),  # You MUST use an empty string as the URL prefix
 ] 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
