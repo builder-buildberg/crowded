@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ground.apps.GroundConfig',
-    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -139,36 +138,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = ['https://*crowded.pk','http://*crowded.pk' , 'https://*letsgetcrowded.com', 'http://*letsgetcrowded.com','http://*127.0.0.1/', 'http://*52.66.199.182/']
-
-# PWA settings
-
-PWA_APP_NAME = 'Crowded'
-PWA_APP_DESCRIPTION = "Crowded.pk is a platform that helps you find the best places to eat, drink, shop, and explore in your city. We're building a community of food lovers and food experts who can share their knowledge and experiences with the world."
-PWA_APP_THEME_COLOR = "#104b1"
-PWA_APP_BACKGROUND_COLOR = '#ffffff'
-PWA_APP_DISPLAY = 'standalone'
-PWA_APP_SCOPE = '/'
-PWA_APP_ORIENTATION = 'any'
-PWA_APP_START_URL = '/'
-PWA_APP_STATUS_BAR_COLOR = 'default'
-PWA_APP_ICONS = [
-    {
-        'src': '/static/favicon/android-chrome-192x192.png',
-        'sizes': '192x192'
-    }
-]
-PWA_APP_ICONS_APPLE = [
-    {
-        'src': '/static/images/my_apple_icon.png',
-        'sizes': '160x160'
-    }
-]
-PWA_APP_SPLASH_SCREEN = [
-    {
-        'src': '/static/favicon/android-chrome-384x384.png',
-        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
-    }
-]
-PWA_APP_DIR = 'ltr'
-PWA_APP_LANG = 'en-US'
-
