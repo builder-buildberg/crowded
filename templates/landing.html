@@ -88,7 +88,7 @@
           <div class="col-xl-7 d-flex align-items-stretch order-2 order-lg-1">
             <div class="content d-flex flex-column justify-content-center">
               <div class="row">
-                <div class="col-md-6 icon-box" data-aos="fade-up">
+                <div onclick="document.location='{% url 'ground_list' %}'" class="col-md-6 icon-box" data-aos="fade-up">
                   <i class="bx bx-search"></i>
                   <h4>Search</h4>
                   <p>Are you looking to play after work, organize your Five's football match? Explore the largest network of grounds facilities in Lahore</p>
@@ -100,11 +100,11 @@
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                   <i class="bx bx-football"></i>
-                  <h4>Let'play</h4>
+                  <h4>Let's play</h4>
                   <p>You’re the hero, you’ve found a stunning ground, booked with ease and now its time to play. The scene is set for your epic match</p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bx bx-list-plus"></i>
+                  <i href="" class="bx bx-list-plus"></i>
                   <h4>List your Ground</h4>
                   <p>Unlock the full potential of your ground with Crowded.pk - easily manage your account, connect with more players and grow your business every day.</p>
                 </div>
@@ -509,7 +509,7 @@
 
 <!-- footer block -->
 {% block footer %}
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<a href="ground_list.html" class="back-to-top d-flex align-items-center justify-content-center" style="width: fit-content; padding-inline: 10px; color:white;"><i class="bx bx-search"></i>Grounds</a>
 {% include 'footer.html' %}
 {% endblock %}
 
