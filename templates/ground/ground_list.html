@@ -16,7 +16,7 @@
     <div class="py-5">
     <div class="container">
         <!-- give the search bar a class of search-bar and margin of 10px inside the container -->  
-        <div class="search-bar" style="margin-bottom:20px; display: flex; align-items:center; ">
+        <div id="Search1" class="search-bar" style="margin-bottom:20px; display: flex; align-items:center; ">
             <input type="text" id="pac-input" class="form-control" placeholder="Search for Grounds and Locations">
         </div>
         
@@ -46,7 +46,16 @@
 
 <!-- scripts block -->
 {% block scripts %}
+
     <script>
+        var input1 = document.getElementById("pac-input");
+        input1.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("pac-input").blur();
+        }
+        });
+
         const data = "{{qs_json}}"
         const qs = JSON.parse(data.replace(/&quot;/g, '"'))
         console.log(qs)
@@ -54,13 +63,14 @@
         let filteredArray = []
         input.addEventListener("keyup",(e)=>{
             list.innerHTML = ""
-            filteredArray = qs.filter(ground => ground.name.toLowerCase().includes(e.target.value.toLowerCase()) || ground.should_also_be_shown_in.toLowerCase().includes(e.target.value.toLowerCase()))
+            filteredArray = qs.filter(ground => ground.name.toLowerCase().includes(e.target.value.toLowerCase()) || ground.area.toLowerCase().includes(e.target.value.toLowerCase()))
             // filteredArray = filteredArray.concat(qs.filter(ground => ground.should_also_be_shown_in.toLowerCase().includes(e.target.value.toLowerCase())))
             if (filteredArray.length == 0){
-                list.innerHTML = `<h1 style='text-align: center;'>No Grounds Found</h1>`
+                list.innerHTML = "<h1 style='text-align: center;'>No Grounds Found</h1>"
             }
 
             else {
+                list.innerHTML = `<p><strong>${filteredArray.length} Grounds Found</strong></p>`
                 // list.innerHTML = `<p><strong>${filteredArray.length} Grounds Found</strong></p>`
                 filteredArray.forEach(ground => {
                     list.innerHTML += `
@@ -71,7 +81,7 @@
                         <h5 class="card-title">${ground.name}</h5>
                         <a class="list-group-item"><i class='bx bx-map'></i> ${ground.area}, ${ground.city}</a>
                         <a class="list-group-item"><i class='bx bx-money'></i> Rs. ${ground.price} per hour</a>
-                        <a id="view_details" href="/ground/${ground.id}" class="btn btn-primary" style="width:100%; margin-top:8px;" >View Details</a>
+                        <a href="/ground/${ground.id}" class="btn btn-primary" style="width:100%; margin-top:8px;" >View Details</a>
                     </div>
                 </div>
             </div>`
