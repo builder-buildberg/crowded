@@ -37,9 +37,13 @@
         <li><a class="nav-link scrollto" href="{% url 'home'%}#contact">Contact</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
+    </nav> <!-- .navbar -->
 
   </div>
+          <!-- give the search bar a class of search-bar and margin of 10px inside the container -->  
+          <div id="Search1" class="search-bar" style="margin-bottom:20px; display: flex; align-items:center; ">
+            <input type="text" id="pac-input" class="form-control" placeholder="Search for Grounds and Locations">
+        </div>
 </header>
 {% endblock %}
 
@@ -49,10 +53,7 @@
     <section>
     <div class="py-5">
     <div class="container">
-        <!-- give the search bar a class of search-bar and margin of 10px inside the container -->  
-        <div id="Search1" class="search-bar" style="margin-bottom:20px; display: flex; align-items:center; ">
-            <input type="text" id="pac-input" class="form-control" placeholder="Search for Grounds and Locations">
-        </div>
+
         
         <div id="list" class="row hidden-md-up">
           {% for ground in object_list %}
