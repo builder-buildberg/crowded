@@ -59,7 +59,7 @@
         <div id="list" class="row hidden-md-up">
           {% for ground in object_list %}
             <div class=" col-md-4">
-                <div id="ground_card" class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'" style="margin-top: 10px;">
+                <div id="ground_card" class="card" onclick="document.location='{% url 'ground_detail' ground.id %}'" style="margin-top: 20px;">
                     <img src="{{ ground.image.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ ground.name }}</h5>
@@ -106,12 +106,12 @@
             }
 
             else {
-                list.innerHTML = `<p><strong>${filteredArray.length} Grounds Found</strong></p>`
+                // list.innerHTML = `<p><strong>${filteredArray.length} Grounds Found</strong></p>`
                 // list.innerHTML = `<p><strong>${filteredArray.length} Grounds Found</strong></p>`
                 filteredArray.forEach(ground => {
                     list.innerHTML += `
                     <div class=" col-md-4">
-                        <div id="ground_card" class="card" onclick="document.location='/ground/${ground.id}'" style="margin-top: 10px;">
+                        <div id="ground_card" class="card" onclick="document.location='/ground/${ground.id}'" style="margin-top: 20px;">
                     <img src="media/${ground.image}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${ground.name}</h5>
