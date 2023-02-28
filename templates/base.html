@@ -60,6 +60,23 @@
       }]
     }
     </script>
+     <!-- Structured data-->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Grounds List",
+        "itemListElement": [
+        {"@type": "ListItem", "position":1, "url": "http://crowded.pk/ground", "name":"Play In Arena", "address":"Mall Road", "Area":" Mall Road", "City":"Lahore", "Description":"Play In Arena located at Mall Road provides an excellent play area for children to stay active and have fun. With affordable pricing starting at only  1500hourly, families from all backgrounds can enjoy the expansive play area. The convenient location and ample parking make it easily accessible for everyone. The play area is cleaned regularly to ensure hygiene and safety, providing a safe and secure environment for children to play. Come and visit Team up sports arena today for an unforgettable playtime experience!"}
+        ], 
+        "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://crowded.pk/ground/search?q={search_term_string}",
+         "query-input": "required name=search_term_string"
+        }
+       }
+     </script>
+      
   <!-- Favicons -->
 
   <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">
