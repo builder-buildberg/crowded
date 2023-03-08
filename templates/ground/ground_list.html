@@ -92,8 +92,9 @@
         }
         });
         const data = "{{qs_json}}"
-        console.log(data.replace(/&quot;/g, '"'))
+        console.log(data)
         const qs = JSON.parse(data.replace(/&quot;/g, '"'))
+        console.log(qs)
         const input = document.getElementById("pac-input");
         let filteredArray = []
         input.addEventListener("keyup",(e)=>{
