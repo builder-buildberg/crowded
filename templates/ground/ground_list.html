@@ -84,14 +84,14 @@
 {% block scripts %}
 
     <script>
-        var input1 = document.getElementById("pac-input");
-        input1.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("pac-input").blur();
-        }
-        });
-        console.log("hello")
+        // var input1 = document.getElementById("pac-input");
+        // input1.addEventListener("keyup", function(event) {
+        // if (event.keyCode === 13) {
+        //     event.preventDefault();
+        //     document.getElementById("pac-input").blur();
+        // }
+        // });
+
         const data = "{{qs_json}}"
         const qs = JSON.parse(data.replace(/&quot;/g, '"'))
         console.log(qs)
