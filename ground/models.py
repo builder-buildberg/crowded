@@ -1,11 +1,13 @@
 from django.db import models
 from django.utils.text import slugify
+from uuid import uuid4
 
 # Create your models here.
 # create a model for playing ground for bookings and a solt model
 # for the slots in the ground
 
 class Ground(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     area = models.CharField(max_length=100)
