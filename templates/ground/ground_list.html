@@ -92,16 +92,8 @@
         }
         });
         const data = "{{qs_json}}"
-
-        const qs = (data.replace(/&quot;/g, '"'))
-        // try to parse the data into json format and if it fails then return an empty array
-        try {
-            qs = JSON.parse(qs)
-        } catch (e) {
-            console.log(e)
-            const qs = []
-        }
-        console.log(qs)
+        console.log(data.replace(/&quot;/g, '"'))
+        const qs = JSON.parse(data.replace(/&quot;/g, '"'))
         const input = document.getElementById("pac-input");
         let filteredArray = []
         input.addEventListener("keyup",(e)=>{
