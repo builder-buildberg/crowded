@@ -36,7 +36,7 @@ class Command(BaseCommand):
                     city=row['city'],
                     num_of_courts=row['num_of_courts'],
                     sports_type=row['sports_type'],
-                    owner_contact="+92"+row['owner_contact'],
+                    owner_contact=int("+92"+str(row['owner_contact'])),
                     price=row['price'],
                     # has_lights is a boolean field but in sheets it is TRUE FALSE
                     # so we need to convert it to boolean
