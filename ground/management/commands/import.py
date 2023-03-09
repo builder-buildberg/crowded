@@ -49,7 +49,7 @@ class Command(BaseCommand):
                 # Check if image URL is not empty
                 if not str(row['image_url']).startswith('http'):
                     # Set the image filename and size
-                    image_filename = f'{row["Name"]}.webp'
+                    image_filename = f'{row["name"]}.webp'
                     image_size = (300, 300)
 
                     # Create a new image with the white background
@@ -58,9 +58,9 @@ class Command(BaseCommand):
                     # Draw the ground name in the center of the image
                     draw = ImageDraw.Draw(image)
 
-                    text_size = draw.textsize(row['Name'])
+                    text_size = draw.textsize(row['name'])
                     text_position = ((image_size[0] - text_size[0]) // 2, (image_size[1] - text_size[1]) // 2)
-                    draw.text(text_position, row['Name'], fill='black')
+                    draw.text(text_position, row['name'], fill='black')
 
                     # Save the image to the ground's image field
                     image_file = BytesIO()
@@ -69,7 +69,7 @@ class Command(BaseCommand):
                 else:
                     # Download the image to a webp format
                     image_url = row['image_url']
-                    image_filename = f'{row["Name"]}.webp'
+                    image_filename = f'{row["name"]}.webp'
                     response = requests.get(image_url)
                     image_data = response.content
 
