@@ -50,7 +50,7 @@ class Command(BaseCommand):
                 if not str(row['image_url']).startswith('http'):
                     # Set the image filename and size
                     image_filename = f'{row["name"]}.webp'
-                    image_size = (300, 300)
+                    image_size = (500, 500)
 
                     # Create a new image with the white background
                     image = Image.new('RGB', image_size, 'white')
