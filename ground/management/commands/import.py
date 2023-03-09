@@ -16,7 +16,7 @@ class Command(BaseCommand):
         # get the filename from the root directory of the
         # project
         Ground.objects.all().delete()
-        gc = gspread.service_account(filename='ground/credentials.json')
+        gc = gspread.service_account(filename='service_account.json')
         # Open the spreadsheet
         sh = gc.open("Grounds")
         # Get the first sheet
