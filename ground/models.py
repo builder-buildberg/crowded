@@ -29,7 +29,7 @@ class Ground(models.Model):
         return self.name
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.name)+"-"+str(self.owner_contact)[-4:]
         super(Ground, self).save(*args, **kwargs)
 
     def summary(self):
