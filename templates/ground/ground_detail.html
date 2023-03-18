@@ -4,7 +4,15 @@
 
 <!-- title block -->
 {% block title %}{{ object.name }}{% endblock %}
-<meta name="description" content="{{object.name}} located at {{object.address}} provides an excellent play area for children to stay active and have fun. With affordable pricing starting at only {{Object.price}}, families from all backgrounds can enjoy the expansive play area. The convenient location and ample parking make it easily accessible for everyone. The play area is cleaned regularly to ensure hygiene and safety, providing a safe and secure environment for children to play. Come and visit Team up sports arena today for an unforgettable playtime experience! ">
+  <meta property="og:title" content="{{Object.name}}">
+  <meta property="og:image_" content="{{ object.image.url }}">
+  <meta name="description" content="{{object.name}} located at {{object.address}} provides an excellent play area for children to stay active and have fun. With affordable pricing starting at only {{Object.price}}, families from all backgrounds can enjoy the expansive play area. The convenient location and ample parking make it easily accessible for everyone. The play area is cleaned regularly to ensure hygiene and safety, providing a safe and secure environment for children to play. Come and visit Team up sports arena today for an unforgettable playtime experience! ">
+  <meta property="og:url" content=https://crowded.pk/>
+  <meta name = "image" property="og:image" content="{{ object.image.url }}">
+  <meta name="twitter:card" content="Crowded is a platform for booking slots for various kind of services including sports grounds.">
+  <meta name="twitter:creator" content="@crowdedpk">
+  <meta property="og:description" content="At crowded you can browse multiple grounds/play arenas near your home, easily find their contact no and book your slot with a hassle-free experience">
+
 {% block header %}
     {% include 'ground/header.html' %}
 {% endblock %}
