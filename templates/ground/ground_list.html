@@ -81,7 +81,12 @@
                         <a class="list-group-item"><i class='bx bx-map'></i> {{ground.area}}, {{ground.city}}</a>
                         <a class="list-group-item"><i class='bx bx-money'></i> Rs. {{ground.price}} per hour</a>
                         <a id="ground_card" href="{% url 'ground_detail' ground.slug %}" class="btn btn-primary" style="width:100%; margin-top:8px;">View Details</a>
-                    </div>
+                        <script type="text/javascript">
+                        $('#ground_card').click(function() {
+                        fbq('track', 'view_details', {currency: "USD", value: 1.00});
+                        });
+                        </script>                    
+                      </div>
                 </div>
             </div>
             {% endfor %}
