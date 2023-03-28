@@ -6,26 +6,21 @@
 <!-- title block -->
 {% block title %}Crowded | Tournament{% endblock %}
 {% block header %}
-<script async src="https://tally.so/widgets/embed.js"></script>
-    <style type="text/css">
-    html { margin: 0; height: 100%; overflow: hidden; }
-    iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0; }
-    </style>
 
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <header id="header" class="fixed-top  header-transparent ">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="#">Crowded</a></h1>
+        <h1><a href="{% url 'home' %}">Crowded</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="{% static '/img/logo.png' %}" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#features">Features</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#features">Features</a></li> -->
           <!--
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
@@ -51,8 +46,8 @@
 
 <!-- content block for the list of grounds -->
 {% block content %}
+<iframe data-tally-src="https://tally.so/embed/wQ1kqX?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="1273" frameborder="0" marginheight="0" marginwidth="0" title="Tournament"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 
-<iframe data-tally-src="https://tally.so/r/wQ1kqX" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="Tournament"></iframe>
 {% endblock %}
 
 <!-- footer block -->
@@ -63,11 +58,5 @@
 
 <!-- scripts block -->
 {% block scripts %}
-<!-- Frill Widget (https://frill.co) -->
-<script>
-  window.Frill_Config = window.Frill_Config || [];
-  window.Frill_Config.push({ key: '34e8a964-44f0-4b8c-a8fc-291d1fe02999' });
-</script>
-<script async src="https://widget.frill.co/v2/widget.js"></script>
 <!-- End Frill Widget -->
 {% endblock %}
