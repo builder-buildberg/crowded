@@ -1,0 +1,73 @@
+
+<!-- extends the base.html file -->
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- title block -->
+{% block title %}Crowded | Tournament{% endblock %}
+{% block header %}
+<script async src="https://tally.so/widgets/embed.js"></script>
+    <style type="text/css">
+    html { margin: 0; height: 100%; overflow: hidden; }
+    iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0; }
+    </style>
+
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="#">Crowded</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="{% static '/img/logo.png' %}" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#features">Features</a></li>
+          <!--
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+          -->
+          <li><a class="nav-link scrollto" href="#faq">F.A.Q</a></li>
+          <li id="social_media" class="dropdown"><a href="#"><span>Social Media</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="https://www.facebook.com/Crowdedpk-111621061835765">Facebook</a></li>
+              <li><a href="https://www.instagram.com/crowded.pk/">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/company/crowded-pk/">Linkedin</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'ground_list' %}">Book Now</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+<!-- header block -->
+{% endblock %}
+
+<!-- content block for the list of grounds -->
+{% block content %}
+
+<iframe data-tally-src="https://tally.so/r/wQ1kqX" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="Tournament"></iframe>
+{% endblock %}
+
+<!-- footer block -->
+{% block footer %}
+<a href="ground" class="back-to-top d-flex align-items-center justify-content-center" style="width: fit-content; padding-inline: 10px; color:white;"><i class="bx bx-search"></i>Grounds</a>
+{% include 'footer.html' %}
+{% endblock %}
+
+<!-- scripts block -->
+{% block scripts %}
+<!-- Frill Widget (https://frill.co) -->
+<script>
+  window.Frill_Config = window.Frill_Config || [];
+  window.Frill_Config.push({ key: '34e8a964-44f0-4b8c-a8fc-291d1fe02999' });
+</script>
+<script async src="https://widget.frill.co/v2/widget.js"></script>
+<!-- End Frill Widget -->
+{% endblock %}

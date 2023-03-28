@@ -32,6 +32,7 @@ urlpatterns = [
     path('', gv.home, name='home'),
     path('ground', GroundListView.as_view(), name='ground_list'),
     path('ground/<slug:slug>', gv.GroundDetailView.as_view(), name='ground_detail'),
+    path('go', gv.go, name='go'),
 ] 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

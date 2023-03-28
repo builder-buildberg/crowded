@@ -21,3 +21,6 @@ class GroundDetailView(DetailView):
 # function based view for landing page
 def home(request):
     return render(request, 'landing.html')
+
+def go(request):
+    return render(request, 'go.html')
