@@ -1,0 +1,82 @@
+
+<!-- extends the base.html file -->
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- title block -->
+{% block title %}Crowded | Tournament{% endblock %}
+{% block header %}
+
+   
+<meta name="author" content="Crowded">
+<meta name="keywords" content="">
+
+  <meta property="og:title" content="Crowded - FUTSAL Tournment">
+  <meta property="og:image_" content="https://iili.io/HN6Yh22.th.jpg">
+  <meta property="og:description" content="">    
+  <meta property="og:url" content=https://crowded.pk/>
+  <meta name = "image" property="og:image" content="https://iili.io/HN6Yh22.th.jpg">
+  <meta name="twitter:card" content="">
+  <meta name="twitter:creator" content="@crowdedpk">
+  <meta property="og:description" content="">
+
+  
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="{% url 'home' %}">Crowded</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="{% static '/img/logo.png' %}" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#features">Features</a></li> -->
+          <!--
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+          -->
+          <li><a class="nav-link scrollto" href="#faq">F.A.Q</a></li>
+          <li id="social_media" class="dropdown"><a href="#"><span>Social Media</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="https://www.facebook.com/Crowdedpk-111621061835765">Facebook</a></li>
+              <li><a href="https://www.instagram.com/crowded.pk/">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/company/crowded-pk/">Linkedin</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'ground_list' %}">Book Now</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+<!-- header block -->
+{% endblock %}
+
+<!-- content block for the list of grounds -->
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top: 100px;">
+      <h1 class="text-center">FUTSAL Tournament</h1>
+    </div>
+  </div>
+<iframe data-tally-src="https://tally.so/embed/wQ1kqX?hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="1273" frameborder="10" marginheight="200" marginwidth="10" title="Tournament"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+{% endblock %}
+
+<!-- footer block -->
+{% block footer %}
+<a href="ground" class="back-to-top d-flex align-items-center justify-content-center" style="width: fit-content; padding-inline: 10px; color:white;"><i class="bx bx-search"></i>Grounds</a>
+{% include 'footer.html' %}
+{% endblock %}
+
+<!-- scripts block -->
+{% block scripts %}
+<!-- End Frill Widget -->
+{% endblock %}
