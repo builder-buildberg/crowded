@@ -139,3 +139,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = ['https://*crowded.pk','http://*crowded.pk' , 'https://*letsgetcrowded.com', 'http://*letsgetcrowded.com','http://*127.0.0.1/', 'http://*52.66.199.182/']
+
+SITE_DOMAIN = 'crowded.pk'
