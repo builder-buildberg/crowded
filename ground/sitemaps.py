@@ -10,6 +10,8 @@ class Sitemap(Sitemap):
 class StaticViewSitemap(Sitemap):
     priority = 0.5
     changefreq = 'weekly'
+    protocol = 'https'
+    domain = 'crowded.pk'
     def items(self):
         return ['home', 'go']
 
@@ -19,6 +21,8 @@ class StaticViewSitemap(Sitemap):
 class GroundSitemap(Sitemap):
     priority = 0.5
     changefreq = 'weekly'
+    protocol = 'https'
+    domain = 'crowded.pk'
     def items(self):
         return Ground.objects.all()  # Replace Ground with the actual model used in GroundListView
 
