@@ -26,11 +26,12 @@ from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from django.contrib.sitemaps.views import sitemap
-from ground.sitemaps import StaticViewSitemap, GroundSitemap
+from ground.sitemaps import StaticViewSitemap, GroundSitemap , Sitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
     'ground': GroundSitemap,
+    'sitemap': Sitemap,
 }
 
 
