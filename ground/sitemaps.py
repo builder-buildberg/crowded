@@ -1,13 +1,7 @@
-from django.contrib.sitemaps import Sitemap as DjangoSitemap
+from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 from ground.views import GroundListView
 from ground.models import Ground  # Replace this with the actual model used in GroundListView
-
-class Sitemap(DjangoSitemap):
-    protocol = 'https'
-    domain = 'crowded.pk'
-    priority = 0.5
-    changefreq = 'daily'
 
 class StaticViewSitemap(Sitemap):
     def items(self):
