@@ -4,6 +4,9 @@ from ground.views import GroundListView
 from ground.models import Ground  # Replace this with the actual model used in GroundListView
 
 class StaticViewSitemap(Sitemap):
+    protocol = 'https'
+    priority = 0.5
+    changefreq = 'monthly'
     def items(self):
         return ['home', 'go']
 
@@ -11,6 +14,9 @@ class StaticViewSitemap(Sitemap):
         return reverse(item)
     
 class GroundSitemap(Sitemap):
+    protocol = 'https'
+    priority = 0.5
+    changefreq = 'monthly'
     def items(self):
         return Ground.objects.all()  # Replace Ground with the actual model used in GroundListView
 
