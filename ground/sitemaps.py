@@ -1,9 +1,9 @@
-from django.contrib.sitemaps import Sitemap
+from django.contrib.sitemaps import Sitemap as DjangoSitemap
 from django.urls import reverse
 from ground.views import GroundListView
 from ground.models import Ground  # Replace this with the actual model used in GroundListView
 
-class Sitemap(Sitemap):
+class Sitemap(DjangoSitemap):
     protocol = 'https'
     domain = 'crowded.pk'
 
