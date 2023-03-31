@@ -31,6 +31,7 @@ from ground.sitemaps import StaticViewSitemap, GroundSitemap
 sitemaps = {
     'static': StaticViewSitemap,
     'ground': GroundSitemap,
+    'sitemap': Sitemap,
 }
 
 
