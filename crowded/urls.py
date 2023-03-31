@@ -25,6 +25,13 @@ from . import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from django.contrib.sitemaps.views import sitemap
+from sitemaps import StaticViewSitemap, GroundSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'ground': GroundSitemap,
+}
 
 
 urlpatterns = [
@@ -33,6 +40,7 @@ urlpatterns = [
     path('ground', GroundListView.as_view(), name='ground_list'),
     path('ground/<slug:slug>', gv.GroundDetailView.as_view(), name='ground_detail'),
     path('go', gv.go, name='go'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ] 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
