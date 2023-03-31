@@ -4,19 +4,12 @@ from ground.views import GroundListView
 from ground.models import Ground  # Replace this with the actual model used in GroundListView
 
 class Sitemap(DjangoSitemap):
-<<<<<<< HEAD
     def get_urls(self, page=1, site=None, protocol=None):
         urls = super().get_urls(page, site, protocol)
         for url in urls:
             url['changefreq'] = 'weekly'
             url['priority'] = 0.5
         return urls
-=======
-    protocol = 'https'
-    domain = 'crowded.pk'
-    priority = 0.5
-    changefreq = 'daily'
->>>>>>> parent of f4fcb2e (🎉)
 
 class StaticViewSitemap(Sitemap):
     def items(self):
