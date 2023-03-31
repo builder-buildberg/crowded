@@ -9,7 +9,7 @@ class StaticViewSitemap(Sitemap):
 
     def location(self, item):
         return reverse(item)
-
+    
 class GroundSitemap(Sitemap):
     def items(self):
         return Ground.objects.all()  # Replace Ground with the actual model used in GroundListView
