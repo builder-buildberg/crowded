@@ -26,7 +26,7 @@ from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from django.contrib.sitemaps.views import sitemap
-from sitemaps import StaticViewSitemap, GroundSitemap
+from ground.sitemaps import StaticViewSitemap, GroundSitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
