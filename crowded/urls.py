@@ -12,6 +12,7 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+
 """
 from django.contrib import admin
 from django.urls import path
@@ -25,15 +26,27 @@ from . import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from django.contrib.sitemaps.views import sitemap
+from ground.sitemaps import StaticViewSitemap, GroundSitemap
+
+from django.contrib import admin
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'grounds': GroundSitemap,
+}
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', gv.home, name='home'),
-    path('ground', GroundListView.as_view(), name='ground_list'),
-    path('ground/<slug:slug>', gv.GroundDetailView.as_view(), name='ground_detail'),
+    path('grounds/lahore', GroundListView.as_view(), name='ground_list'),
+    path('grounds/lahore/<slug:slug>', gv.GroundDetailView.as_view(), name='ground_detail'),
     path('go', gv.go, name='go'),
-] 
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+]
+
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
