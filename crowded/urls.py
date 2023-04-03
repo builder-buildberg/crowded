@@ -37,6 +37,7 @@ sitemaps = {
 }
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', gv.home, name='home'),
@@ -44,7 +45,6 @@ urlpatterns = [
     path('grounds/lahore/<slug:slug>', gv.GroundDetailView.as_view(), name='ground_detail'),
     path('go', gv.go, name='go'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-
 ]
 
 urlpatterns += staticfiles_urlpatterns()
