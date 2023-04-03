@@ -17,6 +17,10 @@
     {% include 'ground/header.html' %}
 {% endblock %}
 
+<script type="application/ld+json">
+    {{ structured_data|safe }}
+  </script>
+
 <!-- content block for the list of grounds -->
 {% block content %}
     <!-- <link rel="stylesheet" href="{% static 'css/list_page.css' %}"> 

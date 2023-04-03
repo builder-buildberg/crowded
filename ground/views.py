@@ -18,6 +18,42 @@ class GroundDetailView(DetailView):
     model = Ground
     template_name = 'ground/ground_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        ground = context['object']
+        structured_data = {
+            "@context": "https://schema.org",
+            "@type": "SportsActivityLocation",
+            "name": ground.name,
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": ground.address,
+                "addressLocality": ground.city,
+                "addressRegion": ground.area
+            },
+            "description": ground.description,
+            "numberOfCourts": ground.num_of_courts,
+            "sportsActivityLocationType": ground.sports_type,
+            "telephone": ground.owner_contact,
+            "priceRange": str(ground.price),
+            "image": ground.image.url,
+            "hasMap": ground.map_link,
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Has Lights",
+                    "value": ground.has_lights
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Has Drinks",
+                    "value": ground.has_drinks
+                }
+            ]
+        }
+        context['structured_data'] = json.dumps(structured_data)
+        return context
+
 # function based view for landing page
 def home(request):
     return render(request, 'landing.html')
