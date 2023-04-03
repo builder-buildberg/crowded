@@ -34,12 +34,12 @@ class GroundDetailView(DetailView):
             "description": ground.description,
             "amenityFeature": [
                 {
-                    "@type": "SportsActivityLocation",
+                    "@type": "LocationFeatureSpecification",
                     "name": "Number of Courts",
                     "value": ground.num_of_courts
                 },
                 {
-                    "@type": "SportsActivityLocation",
+                    "@type": "LocationFeatureSpecification",
                     "name": "Sports Type",
                     "value": ground.sports_type
                 }
