@@ -4,6 +4,8 @@
 
 <!-- title block -->
 {% block title %}{{ object.name }}{% endblock %}
+<!-- head block for meta tags -->
+{% block head %}
   <meta property="og:title" content="{{object.name}}">
   <meta property="og:image" content="{{ object.image.url }}">
   <meta name="og:description" content="{{object.name}} located at {{object.address}} provides an excellent play area for children to stay active and have fun. With affordable pricing starting at only {{Object.price}}, families from all backgrounds can enjoy the expansive play area. The convenient location and ample parking make it easily accessible for everyone. The play area is cleaned regularly to ensure hygiene and safety, providing a safe and secure environment for children to play. Come and visit Team up sports arena today for an unforgettable playtime experience! ">
@@ -12,12 +14,13 @@
   <meta name="twitter:card" content="Crowded is a platform for booking slots for various kind of services including sports grounds.">
   <meta name="twitter:creator" content="@crowdedpk">
   <meta property="og:description" content="At crowded you can browse multiple grounds/play arenas near your home, easily find their contact no and book your slot with a hassle-free experience">
+  <link rel="stylesheet" href="{% static 'css/ground_detail.css' %}">
+{% endblock %}
 
 {% block header %}
     {% include 'ground/header.html' %}
 {% endblock %}
 
-<!-- content block for the list of grounds -->
 {% block content %}
     <!-- <link rel="stylesheet" href="{% static 'css/list_page.css' %}"> 
     <link rel="stylesheet" href="{% static 'css/ground_detail.css' %}">-->
@@ -88,10 +91,9 @@
                 </div>
                 </section> -->
     {% endblock %}
-    {% block footer %}
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    {% include 'footer.html' %}
-    {% endblock %}
-    {% block scripts %}
-    {% endblock %}
-
+{% block footer %}
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+{% include 'footer.html' %}
+{% endblock %}
+{% block scripts %}
+{% endblock %}
