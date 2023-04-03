@@ -17,9 +17,7 @@
     {% include 'ground/header.html' %}
 {% endblock %}
 
-<script type="application/ld+json">
-    {{ structured_data|safe }}
-  </script>
+
 
 <!-- content block for the list of grounds -->
 {% block content %}
@@ -97,5 +95,8 @@
     {% include 'footer.html' %}
     {% endblock %}
     {% block scripts %}
+    <script type="application/ld+json">
+        {{ structured_data|safe }}
+      </script>
     {% endblock %}
 
