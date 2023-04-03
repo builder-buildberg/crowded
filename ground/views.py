@@ -32,8 +32,18 @@ class GroundDetailView(DetailView):
                 "addressRegion": ground.area
             },
             "description": ground.description,
-            "numberOfCourts": ground.num_of_courts,
-            "sportsActivityLocationType": ground.sports_type,
+            "amenityFeature": [
+                {
+                    "@type": "SportsActivityLocation",
+                    "name": "Number of Courts",
+                    "value": ground.num_of_courts
+                },
+                {
+                    "@type": "SportsActivityLocation",
+                    "name": "Sports Type",
+                    "value": ground.sports_type
+                }
+            ],
             "telephone": ground.owner_contact,
             "priceRange": str(ground.price),
             "image": ground.image.url,
