@@ -41,8 +41,8 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', gv.home, name='home'),
-    path('grounds/lahore', GroundListView.as_view(), name='ground_list'),
-    path('grounds/lahore/<slug:slug>', gv.GroundDetailView.as_view(), name='ground_detail'),
+    path('grounds-in-lahore', GroundListView.as_view(), name='ground_list'),
+    path('grounds-in-lahore/<slug:slug>', gv.GroundDetailView.as_view(), name='ground_detail'),
     path('go', gv.go, name='go'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]

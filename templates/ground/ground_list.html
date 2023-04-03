@@ -75,7 +75,7 @@
           {% for ground in object_list %}
             <div class=" col-md-4">
                 <div id="ground_card" class="card" onclick="document.location='{% url 'ground_detail' ground.slug %}'" style="margin-top: 20px;">
-                    <img src="{{ ground.image.url }}" class="card-img-top" alt="...">
+                    <img src="{{ ground.image.url }}" class="card-img-top" alt="{% ground.name %}">
                     <div class="card-body">
                         <h5 class="card-title">{{ ground.name }}</h5>
                         <a class="list-group-item"><i class='bx bx-map'></i> {{ground.area}}, {{ground.city}}</a>
@@ -130,19 +130,24 @@
                 filteredArray.forEach(ground => {
                     list.innerHTML += `
                     <div class=" col-md-4">
-                        <div id="ground_card" class="card" onclick="document.location='/ground/lahore/${ground.slug}'" style="margin-top: 20px;">
-                    <img src="/media/${ground.image.url}" class="card-img-top" alt="${ground.name}">
+                        <div id="ground_card" class="card" onclick="redirectToGroundDetail('${ground.slug}')" style="margin-top: 20px;">
+                    <img src="/media/${ground.image}" class="card-img-top" alt="${ground.name}">
                     <div class="card-body">
                         <h5 class="card-title">${ground.name}</h5>
                         <a class="list-group-item"><i class='bx bx-map'></i> ${ground.area}, ${ground.city}</a>
                         <a class="list-group-item"><i class='bx bx-money'></i> Rs. ${ground.price} per hour</a>
-                        <a id="ground_card" href="/ground/lahore/${ground.slug}" class="btn btn-primary" style="width:100%; margin-top:8px;" >View Details</a>
+                        <a id="ground_card" href="redirectToGroundDetail('${ground.slug}')" onclick="redirectToGroundDetail('${ground.slug}')" class="btn btn-primary" style="width:100%; margin-top:8px;" >View Details</a>
                     </div>
                 </div>
             </div>`
         })
             }
-        })    
+        })
+
+        function redirectToGroundDetail(slug) {
+          var url = "{% url 'ground_detail' slug=slug %}";
+          window.location.href = url;
+        }
     </script>
    
 {% endblock %}
