@@ -76,7 +76,7 @@
             <h1>NEAREST</h1>
             <h1>SPORTS GROUND</h1>
             <h2>is just a click away.</h2>
-            <a href="ground" class="download-btn"><i class="bx bxs-time"></i> Book Now</a>
+            <a href="{% url 'ground_list' %}" class="download-btn"><i class="bx bxs-time"></i> Book Now</a>
             <a id="Cta34" href="https://tally.so/r/mOQgoR" class="download-btn"><i class="bx bxs-widget"></i> Get Listed</a>
           </div>
         </div>
@@ -524,7 +524,7 @@
 
 <!-- footer block -->
 {% block footer %}
-<a href="ground" class="back-to-top d-flex align-items-center justify-content-center" style="width: fit-content; padding-inline: 10px; color:white;"><i class="bx bx-search"></i>Grounds</a>
+<a href="{% url 'ground_list' %}" class="back-to-top d-flex align-items-center justify-content-center" style="width: fit-content; padding-inline: 10px; color:white;"><i class="bx bx-search"></i>Grounds</a>
 {% include 'footer.html' %}
 {% endblock %}
 
